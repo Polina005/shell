@@ -50,7 +50,4 @@ int main() {
     save_history();
     
     cout << "History saved to: " << historyPath << endl;
-    cout << "Commands in history: " << history.size() << endl;
-    
-    return 0;
-}
+    cout << "Commands in
