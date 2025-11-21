@@ -10,6 +10,8 @@ int main()
     vector<string> history;
     string input;
     bool running = true;
+    string history_file = "kubsh_history.txt";
+    ofstream write_file(history_file, ios::app);
     
     while (running && getline(cin, input)) 
     {
@@ -45,7 +47,10 @@ int main()
             cout << input << ": command not found" << endl;
             history.push_back(input);
         }
+     write_file.close();
     }
     
     return 0;
 }
+
+
