@@ -11,6 +11,15 @@ int main()
     string input;
     bool running = true;
     string history_file = "kubsh_history.txt";
+    
+    // Загрузка истории из файла (если существует)
+    ifstream read_file(history_file);
+    string line;
+    while (getline(read_file, line)) {
+        history.push_back(line);
+    }
+    read_file.close();
+    
     ofstream write_file(history_file, ios::app);
     
     while (running && getline(cin, input)) 
@@ -40,17 +49,16 @@ int main()
             
             cout << text << endl;
             history.push_back(input);
+            write_file << input << endl;
         }
         else 
         {
-            
             cout << input << ": command not found" << endl;
             history.push_back(input);
+            write_file << input << endl;
         }
-     write_file.close();
     }
     
+    write_file.close();
     return 0;
 }
-
-
