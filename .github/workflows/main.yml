@@ -16,7 +16,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        repository: Alesya669/shell
+        repository: Polina005/shell
         # Если репозиторий приватный, добавьте токен:
         # token: ${{ secrets.PAT_TOKEN }}
 
